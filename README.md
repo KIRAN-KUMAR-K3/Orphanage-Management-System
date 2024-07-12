@@ -2,7 +2,11 @@
 
 ## Overview
 
-The Orphanage Database Management System is a robust, web-based application designed to efficiently manage records of orphans. This project leverages PHP for backend development and MySQL for database management, ensuring reliable data handling and security. Additionally, it features an integrated payment gateway to facilitate secure and straightforward donation processing.
+The Orphanage Database Management System is a robust, web-based application designed to efficiently manage records of orphans. Leveraging PHP for backend development and MySQL for database management ensures secure data handling and reliable performance. Additionally, it features an integrated payment gateway for secure donation processing.
+
+<p align="center">
+  <img src="https://img.freepik.com/free-vector/orphanage-concept-illustration_114360-8761.jpg" width="200" alt="Project Logo">
+</p>
 
 ## Table of Contents
 
