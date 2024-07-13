@@ -7,5 +7,6 @@
         <a class="item <?php echo ($_SERVER['PHP_SELF'] == "/orphan/admin/gift-sent.php" ? "active" : "");?>" href="gift-sent.php">Gift Sent</a>
         <a class="item <?php echo ($_SERVER['PHP_SELF'] == "/orphan/admin/programs.php" ? "active" : "");?>" href="./programs.php">Programs</a>
         <a class="item <?php echo ($_SERVER['PHP_SELF'] == "/orphan/admin/feedback.php" ? "active" : "");?>" href="feedback.php">Feedback</a>
+        <a class="item <?php echo ($_SERVER['PHP_SELF'] == "/orphan/admin/child-requests.php" ? "active" : "");?>" href="child-requests.php">Child-requests</a>
     </div>
 </div>

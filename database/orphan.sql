@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 23, 2018 at 05:56 PM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 5.6.38
+-- Host: localhost
+-- Generation Time: Jul 13, 2024 at 08:05 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -37,21 +36,44 @@ CREATE TABLE `children` (
   `cstory` text NOT NULL,
   `cphoto` text NOT NULL,
   `sponsored` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `children`
 --
 
 INSERT INTO `children` (`cid`, `cname`, `cdob`, `cyoe`, `cclass`, `cstory`, `cphoto`, `sponsored`) VALUES
-(7, 'Ganesh', '2006-12-20', 2009, 1, 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.', '', 1),
-(8, 'Suraj', '2005-06-15', 2007, 3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', '', 0),
-(9, 'Sagar', '2006-06-14', 2008, 2, 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '', 0),
-(11, 'Nagesh', '2005-04-08', 2009, 3, 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '', 0),
-(13, 'umesh', '2007-06-14', 2010, 4, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '', 0),
-(14, 'fazal', '2004-06-22', 2007, 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus integer feugiat scelerisque varius morbi enim nunc faucibus a.', '', 0),
-(15, 'Ujwal', '2008-09-21', 2010, 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Maecenas ultricies mi eget mauris pharetra.', '', 0),
-(16, 'Amith', '1998-12-23', 2004, 2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Maecenas ultricies mi eget mauris pharetra.', '', 0);
+(7, 'Ganesh', '2006-12-20', '2009', 1, 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.', '', 1),
+(8, 'Suraj', '2005-06-15', '2007', 3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', '', 0),
+(9, 'Sagar', '2006-06-14', '2008', 2, 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '', 0),
+(11, 'Nagesh', '2005-04-08', '2009', 3, 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '', 0),
+(13, 'umesh', '2007-06-14', '2010', 4, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '', 0),
+(14, 'fazal', '2004-06-22', '2007', 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus integer feugiat scelerisque varius morbi enim nunc faucibus a.', '', 0),
+(15, 'Ujwal', '2008-09-21', '2010', 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Maecenas ultricies mi eget mauris pharetra.', '', 0),
+(16, 'Amith', '1998-12-23', '2004', 2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Maecenas ultricies mi eget mauris pharetra.', '', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `child_registration_requests`
+--
+
+CREATE TABLE `child_registration_requests` (
+  `id` int(11) NOT NULL,
+  `cname` varchar(100) NOT NULL,
+  `cdob` date NOT NULL,
+  `cyoe` year(4) NOT NULL,
+  `cclass` int(11) NOT NULL,
+  `cstory` text NOT NULL,
+  `cphoto` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `child_registration_requests`
+--
+
+INSERT INTO `child_registration_requests` (`id`, `cname`, `cdob`, `cyoe`, `cclass`, `cstory`, `cphoto`) VALUES
+(1, 'gopal', '2024-07-10', '1902', 9, 'i am too poor ', '');
 
 -- --------------------------------------------------------
 
@@ -70,7 +92,7 @@ CREATE TABLE `donation` (
   `email` varchar(50) NOT NULL,
   `phone` int(20) NOT NULL,
   `d_address` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `donation`
@@ -94,7 +116,7 @@ CREATE TABLE `feedback` (
   `phone` int(20) NOT NULL,
   `email` varchar(30) NOT NULL,
   `comment` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `feedback`
@@ -119,7 +141,7 @@ CREATE TABLE `gift` (
   `email` varchar(30) NOT NULL,
   `phone` int(20) NOT NULL,
   `sender_address` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `gift`
@@ -147,7 +169,7 @@ CREATE TABLE `member` (
   `city` varchar(32) DEFAULT NULL,
   `state` varchar(2) DEFAULT NULL,
   `picture` varchar(32) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `member`
@@ -155,7 +177,8 @@ CREATE TABLE `member` (
 
 INSERT INTO `member` (`user_id`, `username`, `password`, `join_date`, `first_name`, `last_name`, `gender`, `birthdate`, `city`, `state`, `picture`) VALUES
 (1, 'testname', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2018-11-17 06:01:40', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(2, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', '2018-11-23 21:45:11', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(2, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', '2018-11-23 21:45:11', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(3, 'root', 'dc76e9f0c0006e8f919e0c515c66dbba3982f785', '2024-07-13 02:11:45', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -168,7 +191,7 @@ CREATE TABLE `newsletter` (
   `n_issue` varchar(40) NOT NULL,
   `n_story` text NOT NULL,
   `n_month` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `newsletter`
@@ -188,7 +211,7 @@ CREATE TABLE `programs` (
   `program_id` int(3) NOT NULL,
   `program_title` varchar(30) NOT NULL,
   `program_desc` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `programs`
@@ -220,7 +243,7 @@ CREATE TABLE `sponsorer` (
   `spn_amount` int(5) NOT NULL,
   `spn_checkno` varchar(20) NOT NULL,
   `cid` int(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `sponsorer`
@@ -238,6 +261,12 @@ INSERT INTO `sponsorer` (`spn_id`, `spn_firstname`, `spn_lastname`, `spnd_date`,
 --
 ALTER TABLE `children`
   ADD PRIMARY KEY (`cid`);
+
+--
+-- Indexes for table `child_registration_requests`
+--
+ALTER TABLE `child_registration_requests`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `donation`
@@ -292,6 +321,12 @@ ALTER TABLE `children`
   MODIFY `cid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
+-- AUTO_INCREMENT for table `child_registration_requests`
+--
+ALTER TABLE `child_registration_requests`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `donation`
 --
 ALTER TABLE `donation`
@@ -313,7 +348,7 @@ ALTER TABLE `gift`
 -- AUTO_INCREMENT for table `member`
 --
 ALTER TABLE `member`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `newsletter`
